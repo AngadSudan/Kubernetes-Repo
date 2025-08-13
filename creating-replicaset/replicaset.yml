@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: k8-replicaset
+  annotations:
+    description: "replicaset metadata"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: replica-pod
+  template:
+    metadata:
+      labels:
+        app: replica-pod
+    spec:
+      containers:
+        - name: replica-pod
+          image: nginx
+          ports:
+            - containerPort: 80
