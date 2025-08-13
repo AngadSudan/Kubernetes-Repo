@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dummy-pod
+  annotations:
+    description: "this is a pods metadata i have created for dummy testing"
+spec:
+  containers:
+    - name: dummy-pod
+      image: nginx
+      ports:
+        - containerPort: 80
